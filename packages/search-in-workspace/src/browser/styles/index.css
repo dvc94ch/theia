@@ -1,0 +1,315 @@
+.searchContainer {
+    color: var(--theia-ui-font-color1);
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.searchContainer input[type="text"] {
+    flex: 1;
+    line-height: var(--theia-content-line-height);
+    font-size: var(--theia-ui-font-size1);
+    padding-left: 8px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--theia-border-color1);
+    background: var(--theia-layout-color0);
+    color: var(--theia-ui-font-color1);
+}
+
+.searchContainer input[type="text"]:focus {
+    outline: none;
+}
+
+.searchContainer .searchHeader {
+    width: 100%;
+    margin-bottom:  10px;
+}
+
+.searchContainer .searchHeader .controls.button-container {
+    height:30px;
+    margin-bottom: 5px;
+}
+
+.searchContainer .searchHeader .controls .refresh {
+    background: var(--theia-icon-refresh);
+}
+
+.searchContainer .searchHeader .controls .collapse-all {
+    background: var(--theia-icon-collapse-all);
+}
+
+.searchContainer .searchHeader .controls .clear {
+    background: var(--theia-icon-clear);
+}
+
+.searchContainer .searchHeader .search-field {
+    display: flex;
+    align-items:  center;
+}
+
+.searchContainer .searchHeader .search-field .option {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.searchContainer .searchHeader .search-field .option.enabled {
+    border: var(--theia-border-width) var(--theia-accent-color3) solid;
+}
+
+.searchContainer .searchHeader .search-field .option:hover {
+    opacity: 1;
+}
+
+.searchContainer .searchHeader .search-field .option.match-case {
+    background-image: var(--theia-icon-case-sensitive);
+}    
+
+.searchContainer .searchHeader .search-field .option.whole-word {
+    background-image: var(--theia-icon-whole-word);
+}    
+
+.searchContainer .searchHeader .search-field .option.use-regexp {
+    background-image: var(--theia-icon-regex);
+}    
+
+.searchContainer .searchHeader .search-field .option-buttons {
+    background: var(--theia-layout-color0);
+    height: 23px;
+    display: flex;
+    align-items:  center;
+}
+
+.searchContainer .searchHeader .search-field:focus {
+    outline: none;
+    border: var(--theia-border-width) var(--theia-accent-color3) solid;
+}
+
+.searchContainer .searchHeader .button-container {
+    text-align: right;
+    padding-right: 5px;
+    padding-top: 5px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.searchContainer .searchHeader .search-field .option, 
+.searchContainer .searchHeader .button-container .btn {
+    width: 21px;
+    height: 21px;
+    margin: 0 1px;
+    display: inline-block;
+    box-sizing: border-box;
+    align-items: center;
+    user-select: none;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: var(--theia-border-width) solid transparent;
+}
+
+.searchContainer .searchHeader .controls .btn{
+    margin-left: 10px;
+    opacity: 0.3;
+}
+
+.searchContainer .searchHeader .controls .btn.enabled{
+    margin-left: 10px;
+    opacity: 1;
+}
+
+.searchContainer .searchHeader .search-details .button-container {
+    height: 0px;
+}
+
+
+.searchContainer .searchHeader .search-details .button-container .btn{
+    cursor: pointer;
+}
+
+.searchContainer .searchHeader .glob-field-container.hidden {
+    display: none;
+}
+
+.searchContainer .searchHeader .glob-field-container .glob-field {
+    margin-bottom: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.searchContainer .searchHeader .glob-field-container .glob-field .label {
+    margin-bottom: 3px;
+    user-select: none;
+    font-size: var(--theia-ui-font-size0);
+}
+
+.searchContainer .result {
+    overflow: hidden;
+    width: 100%;
+} 
+
+.searchContainer .result .result-head {
+    display:flex;
+}
+
+.searchContainer .result .result-head .result-no {
+    background: var(--theia-ui-expand-button-color);
+    padding: 3px 8px;
+    border-radius: 7px;
+    font-size: var(--theia-ui-font-size0);
+}
+
+.searchContainer .result .result-head .expand-icon {
+    margin: 0 3px;
+    width: 7px;
+}
+
+.searchContainer .result .result-head .file-icon {
+    margin: 0 3px;
+}
+
+.searchContainer .result .result-head .file-name {
+    margin-right: 5px;
+}
+
+.searchContainer .result .result-head .file-path {
+    color: var(--theia-ui-font-color2);
+    font-size: var(--theia-ui-font-size0);
+    margin-left: 3px;
+}
+
+.searchContainer .resultLine .match {
+    background: var(--theia-search-match-color1);
+}
+
+.searchContainer .resultLine .match.strike-through {
+    text-decoration: line-through;
+}
+
+.searchContainer .resultLine.selected .match {
+    background: var(--theia-search-match-color1);
+}
+.searchContainer .resultLine .replace-term {
+    background: var(--theia-match-replace-color);
+}
+
+.noWrapInfo {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+.result-head-info {
+    align-items: center;
+}
+
+.search-in-workspace-editor-match {
+    background: var(--theia-search-match-color0);
+}
+
+.current-search-in-workspace-editor-match {
+    background: var(--theia-current-search-match-color)
+}
+
+.current-match-range-highlight {
+    background: var(--theia-range-highlight);
+}
+
+.result-node-buttons {
+    display: none;
+}
+
+.theia-TreeNode:hover .result-node-buttons {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;
+    align-items: center;
+    align-self: center;
+}
+
+.theia-TreeNode:hover .result-number {
+    display: none;
+}
+
+.theia-TreeNode .result-number {
+    background-color: var(--theia-ui-font-color2);
+    border-radius: 10px;
+    padding: 0 5px;
+    text-align: center;
+    font-size: calc(var(--theia-ui-font-size0) * 0.8);
+    color: var(--theia-ui-icon-font-color);
+    font-weight: 400;
+    min-width: 7px;
+    height: 16px;
+    line-height: calc(var(--theia-private-horizontal-tab-height) * 0.8);
+    align-self: center;
+}
+
+.result-node-buttons .remove-node {
+    background-image: var(--theia-icon-close);
+}
+
+.result-node-buttons > span {
+    width: 15px;
+    height: 15px;
+    margin-right: 3px;
+    background-repeat:  no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.search-and-replace-container {
+    display: flex;
+}
+
+.replace-toggle {
+    display: flex;
+    align-items:  center;
+    width: 15px;
+    justify-content: center;
+    margin-right: 2px;
+}
+
+.replace-toggle:hover {
+    background: var(--theia-layout-color0);
+}
+
+.search-and-replace-fields {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.replace-field {
+    display: flex;
+    margin-top: 5px;    
+}
+
+.replace-field.hidden {
+    display: none;
+}
+
+.replace-all-button-container {
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content:  center;
+}
+
+.replace-all-button {
+    width:  100%;
+    height: 100%;
+    display: inline-block;
+    background: var(--theia-icon-replace-all) no-repeat center;
+}
+
+.result-node-buttons .replace-result {
+    background-image: var(--theia-icon-replace);
+}
+
+.replace-all-button.disabled {
+    opacity: 0.5;
+}
