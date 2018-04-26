@@ -1,4 +1,11 @@
-.searchContainer {
+/*
+ * Copyright (C) 2017-2018 Ericsson and others.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
+ */
+
+.t-siw-search-container {
     color: var(--theia-ui-font-color1);
     padding: 5px;
     display: flex;
@@ -7,7 +14,7 @@
     box-sizing: border-box;
 }
 
-.searchContainer input[type="text"] {
+.t-siw-search-container input[type="text"] {
     flex: 1;
     line-height: var(--theia-content-line-height);
     font-size: var(--theia-ui-font-size1);
@@ -19,75 +26,75 @@
     color: var(--theia-ui-font-color1);
 }
 
-.searchContainer input[type="text"]:focus {
+.t-siw-search-container input[type="text"]:focus {
     outline: none;
 }
 
-.searchContainer .searchHeader {
+.t-siw-search-container .searchHeader {
     width: 100%;
     margin-bottom:  10px;
 }
 
-.searchContainer .searchHeader .controls.button-container {
+.t-siw-search-container .searchHeader .controls.button-container {
     height:30px;
     margin-bottom: 5px;
 }
 
-.searchContainer .searchHeader .controls .refresh {
+.t-siw-search-container .searchHeader .controls .refresh {
     background: var(--theia-icon-refresh);
 }
 
-.searchContainer .searchHeader .controls .collapse-all {
+.t-siw-search-container .searchHeader .controls .collapse-all {
     background: var(--theia-icon-collapse-all);
 }
 
-.searchContainer .searchHeader .controls .clear {
+.t-siw-search-container .searchHeader .controls .clear {
     background: var(--theia-icon-clear);
 }
 
-.searchContainer .searchHeader .search-field {
+.t-siw-search-container .searchHeader .search-field {
     display: flex;
     align-items:  center;
 }
 
-.searchContainer .searchHeader .search-field .option {
+.t-siw-search-container .searchHeader .search-field .option {
     cursor: pointer;
     opacity: 0.7;
 }
 
-.searchContainer .searchHeader .search-field .option.enabled {
+.t-siw-search-container .searchHeader .search-field .option.enabled {
     border: var(--theia-border-width) var(--theia-accent-color3) solid;
 }
 
-.searchContainer .searchHeader .search-field .option:hover {
+.t-siw-search-container .searchHeader .search-field .option:hover {
     opacity: 1;
 }
 
-.searchContainer .searchHeader .search-field .option.match-case {
+.t-siw-search-container .searchHeader .search-field .option.match-case {
     background-image: var(--theia-icon-case-sensitive);
 }    
 
-.searchContainer .searchHeader .search-field .option.whole-word {
+.t-siw-search-container .searchHeader .search-field .option.whole-word {
     background-image: var(--theia-icon-whole-word);
 }    
 
-.searchContainer .searchHeader .search-field .option.use-regexp {
+.t-siw-search-container .searchHeader .search-field .option.use-regexp {
     background-image: var(--theia-icon-regex);
 }    
 
-.searchContainer .searchHeader .search-field .option-buttons {
+.t-siw-search-container .searchHeader .search-field .option-buttons {
     background: var(--theia-layout-color0);
     height: 23px;
     display: flex;
     align-items:  center;
 }
 
-.searchContainer .searchHeader .search-field:focus {
+.t-siw-search-container .searchHeader .search-field:focus {
     outline: none;
     border: var(--theia-border-width) var(--theia-accent-color3) solid;
 }
 
-.searchContainer .searchHeader .button-container {
+.t-siw-search-container .searchHeader .button-container {
     text-align: right;
     padding-right: 5px;
     padding-top: 5px;
@@ -95,8 +102,8 @@
     justify-content: flex-end;
 }
 
-.searchContainer .searchHeader .search-field .option, 
-.searchContainer .searchHeader .button-container .btn {
+.t-siw-search-container .searchHeader .search-field .option, 
+.t-siw-search-container .searchHeader .button-container .btn {
     width: 21px;
     height: 21px;
     margin: 0 1px;
@@ -110,88 +117,88 @@
     border: var(--theia-border-width) solid transparent;
 }
 
-.searchContainer .searchHeader .controls .btn{
+.t-siw-search-container .searchHeader .controls .btn{
     margin-left: 10px;
     opacity: 0.3;
 }
 
-.searchContainer .searchHeader .controls .btn.enabled{
+.t-siw-search-container .searchHeader .controls .btn.enabled{
     margin-left: 10px;
     opacity: 1;
 }
 
-.searchContainer .searchHeader .search-details .button-container {
+.t-siw-search-container .searchHeader .search-details .button-container {
     height: 0px;
 }
 
 
-.searchContainer .searchHeader .search-details .button-container .btn{
+.t-siw-search-container .searchHeader .search-details .button-container .btn{
     cursor: pointer;
 }
 
-.searchContainer .searchHeader .glob-field-container.hidden {
+.t-siw-search-container .searchHeader .glob-field-container.hidden {
     display: none;
 }
 
-.searchContainer .searchHeader .glob-field-container .glob-field {
+.t-siw-search-container .searchHeader .glob-field-container .glob-field {
     margin-bottom: 8px;
     display: flex;
     flex-direction: column;
 }
 
-.searchContainer .searchHeader .glob-field-container .glob-field .label {
+.t-siw-search-container .searchHeader .glob-field-container .glob-field .label {
     margin-bottom: 3px;
     user-select: none;
     font-size: var(--theia-ui-font-size0);
 }
 
-.searchContainer .result {
+.t-siw-search-container .result {
     overflow: hidden;
     width: 100%;
 } 
 
-.searchContainer .result .result-head {
+.t-siw-search-container .result .result-head {
     display:flex;
 }
 
-.searchContainer .result .result-head .result-no {
+.t-siw-search-container .result .result-head .result-no {
     background: var(--theia-ui-expand-button-color);
     padding: 3px 8px;
     border-radius: 7px;
     font-size: var(--theia-ui-font-size0);
 }
 
-.searchContainer .result .result-head .expand-icon {
+.t-siw-search-container .result .result-head .expand-icon {
     margin: 0 3px;
     width: 7px;
 }
 
-.searchContainer .result .result-head .file-icon {
+.t-siw-search-container .result .result-head .file-icon {
     margin: 0 3px;
 }
 
-.searchContainer .result .result-head .file-name {
+.t-siw-search-container .result .result-head .file-name {
     margin-right: 5px;
 }
 
-.searchContainer .result .result-head .file-path {
+.t-siw-search-container .result .result-head .file-path {
     color: var(--theia-ui-font-color2);
     font-size: var(--theia-ui-font-size0);
     margin-left: 3px;
 }
 
-.searchContainer .resultLine .match {
+.t-siw-search-container .resultLine .match {
     background: var(--theia-search-match-color1);
 }
 
-.searchContainer .resultLine .match.strike-through {
+.t-siw-search-container .resultLine .match.strike-through {
     text-decoration: line-through;
 }
 
-.searchContainer .resultLine.selected .match {
+.t-siw-search-container .resultLine.selected .match {
     background: var(--theia-search-match-color1);
 }
-.searchContainer .resultLine .replace-term {
+.t-siw-search-container .resultLine .replace-term {
     background: var(--theia-match-replace-color);
 }
 

@@ -48,7 +48,7 @@ export class SearchInWorkspaceWidget extends BaseWidget {
         this.title.label = SearchInWorkspaceWidget.LABEL;
 
         this.contentNode = document.createElement('div');
-        this.contentNode.classList.add("searchContainer");
+        this.contentNode.classList.add("t-siw-search-container");
         this.searchFormContainer = document.createElement('div');
         this.searchFormContainer.classList.add("searchHeader");
         this.contentNode.appendChild(this.searchFormContainer);
