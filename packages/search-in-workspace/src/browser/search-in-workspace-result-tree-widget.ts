@@ -199,18 +199,14 @@ export class SearchInWorkspaceResultTreeWidget extends TreeWidget {
             if (currentTitle && currentTitle.owner instanceof EditorWidget) {
                 const widget = currentTitle.owner;
                 const result = this.resultTree.get(widget.editor.uri.withoutScheme().toString());
-                if (result) {
-                    this.decorateEditor(result, widget);
-                }
+                this.decorateEditor(result, widget);
             }
         });
 
-        const widget = this.editorManager.currentEditor;
-        if (widget) {
-            const result = this.resultTree.get(widget.editor.uri.withoutScheme().toString());
-            if (result) {
-                this.decorateEditor(result, widget);
-            }
+        const currentWidget = this.editorManager.currentEditor;
+        if (currentWidget) {
+            const result = this.resultTree.get(currentWidget.editor.uri.withoutScheme().toString());
+            this.decorateEditor(result, currentWidget);
         }
     }
 
@@ -401,9 +397,7 @@ export class SearchInWorkspaceResultTreeWidget extends TreeWidget {
             mode: "reveal"
         });
 
-        if (resultNode) {
-            this.decorateEditor(resultNode, editorWidget);
-        }
+        this.decorateEditor(resultNode, editorWidget);
 
         return editorWidget;
     }
@@ -427,40 +421,43 @@ export class SearchInWorkspaceResultTreeWidget extends TreeWidget {
     }
 
     protected decorateEditor(node: SearchInWorkspaceResultNode | undefined, editorWidget: EditorWidget) {
-        const key = `${node.file}#search-in-workspace-matches`;
+        const key = `${editorWidget.editor.uri.toString()}#search-in-workspace-matches`;
         const oldDecorations = this.appliedDecorations.get(key) || [];
+        const newDecorations = this.createEditorDecorations(node);
         const appliedDecorations = editorWidget.editor.deltaDecorations({
-            newDecorations: this.createEditorDecorations(node),
+            newDecorations,
             oldDecorations,
-            uri: node.file
+            uri: editorWidget.editor.uri.toString()
         });
         this.appliedDecorations.set(key, appliedDecorations);
     }
 
-    protected createEditorDecorations(resultNode: SearchInWorkspaceResultNode): EditorDecoration[] {
+    protected createEditorDecorations(resultNode: SearchInWorkspaceResultNode | undefined): EditorDecoration[] {
         const decorations: EditorDecoration[] = [];
-        resultNode.children.map(res => {
-            decorations.push({
-                range: {
-                    start: {
-                        line: res.line - 1,
-                        character: res.character - 1
+        if (resultNode) {
+            resultNode.children.map(res => {
+                decorations.push({
+                    range: {
+                        start: {
+                            line: res.line - 1,
+                            character: res.character - 1
+                        },
+                        end: {
+                            line: res.line - 1,
+                            character: res.character - 1 + res.length
+                        }
                     },
-                    end: {
-                        line: res.line - 1,
-                        character: res.character - 1 + res.length
+                    options: {
+                        overviewRuler: {
+                            color: "rgba(230, 0, 0, 1)",
+                            position: OverviewRulerLane.Full
+                        },
+                        className: res.selected ? "current-search-in-workspace-editor-match" : "search-in-workspace-editor-match",
+                        stickiness: TrackedRangeStickiness.GrowsOnlyWhenTypingBefore
                     }
-                },
-                options: {
-                    overviewRuler: {
-                        color: "rgba(230, 0, 0, 1)",
-                        position: OverviewRulerLane.Full
-                    },
-                    className: res.selected ? "current-search-in-workspace-editor-match" : "search-in-workspace-editor-match",
-                    stickiness: TrackedRangeStickiness.GrowsOnlyWhenTypingBefore
-                }
+                });
             });
-        });
+        }
         return decorations;
     }
 }
