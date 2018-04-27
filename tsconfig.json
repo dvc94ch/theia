@@ -87,6 +87,15 @@
       ],
       "@theia/editorconfig/lib/*": [
         "packages/editorconfig/src/*"
+      ],
+      "@theia/vim/lib/*": [
+        "packages/vim/src/*"
+      ],
+      "@theia/spacemacs/lib/*": [
+        "packages/spacemacs/src/*"
+      ],
+      "@theia/rust/lib/*": [
+        "packages/rust/src/*"
       ]
     },
     "plugins": [

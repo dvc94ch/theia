@@ -35,7 +35,7 @@ export class EditorTextFocusContext implements KeybindingContext {
         return !!this.getEditor();
     }
 
-    protected getEditor(): EditorWidget | undefined {
+    getEditor(): EditorWidget | undefined {
         const widget = this.editorManager.activeEditor;
         if (widget && this.canHandle(widget)) {
             return widget;
@@ -43,7 +43,7 @@ export class EditorTextFocusContext implements KeybindingContext {
         return undefined;
     }
 
-    protected canHandle(widget: EditorWidget): boolean {
+    canHandle(widget: EditorWidget): boolean {
         return widget.editor.isFocused();
     }
 

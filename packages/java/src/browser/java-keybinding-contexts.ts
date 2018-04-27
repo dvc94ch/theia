@@ -18,7 +18,7 @@ export class JavaEditorTextFocusContext extends EditorTextFocusContext {
 
     readonly id: string = JavaKeybindingContexts.javaEditorTextFocus;
 
-    protected canHandle(widget: EditorWidget): boolean {
+    canHandle(widget: EditorWidget): boolean {
         return super.canHandle(widget) && widget.editor.document.languageId === JAVA_LANGUAGE_ID;
     }
 

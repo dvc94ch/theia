@@ -23,7 +23,7 @@ import { MonacoEditor } from './monaco-editor';
 @injectable()
 export class MonacoStrictEditorTextFocusContext extends StrictEditorTextFocusContext {
 
-    protected canHandle(widget: EditorWidget): boolean {
+    canHandle(widget: EditorWidget): boolean {
         if (!super.canHandle(widget)) {
             return false;
         }
